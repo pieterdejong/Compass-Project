@@ -1,24 +1,15 @@
-@mixin centerElementHorizontal($width)
-  position: relative
-  left: 50%
-  margin-left: -$width/2
-  width: $width
-
-@mixin centerElementVertical($height)
-  position: relative
+@mixin centerElement
   top: 50%
-  margin-top: -$height/2
-  height: $height
+  left: 50%
+  +translate(-50%, -50%)
 
-@mixin centerElement($width, $height)
-  @include centerElementHorizontal($width)
-  @include centerElementVertical($height)
+@mixin centerElementHorizontal
+  left: 50%
+  +translateX(-50%)
 
-@mixin unsetCenterElementHorizontal()
-  position: static
-  left: 0
-  margin-left: 0
-  width: auto
+@mixin centerElementVertical
+  top: 50%
+  +translateY(-50%)
 
 @mixin background-image-retina($file, $type)
   background-image: image-url($file + '.' + $type)
